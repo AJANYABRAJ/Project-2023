@@ -1,0 +1,16 @@
+{% extends 'Customer_Temp/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card" style="width: 18rem;">
+  {% for i in data %}
+  <img src="{{i.image.url}}" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">{{i.description}}</p>
+    <h5 class="card-title">{{i.price}}</h5>
+    <a type="submit" href="{% url 'bill_payment' i.id %}" class="btn btn-primary btn-sm">Buy Now</a>
+    <a type="submit" class="btn btn-secondary btn-sm">Cash on Delivery</a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

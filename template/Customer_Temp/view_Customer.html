@@ -1,0 +1,14 @@
+{% extends 'Customer_Temp/index.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="card">
+    <img src="{{i.image.url}}" style="border-radius:10%; width:75px; height:75px" >
+    {% for i in data %}
+    <div class="card-body">
+      <h5 class="card-title">{{i.name}}</h5>
+      <p class="card-text">{{i.phone}}</p>
+      <h5 class="card-title">{{i.address}}</h5>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
